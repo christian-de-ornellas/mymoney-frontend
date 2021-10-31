@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, useColorMode } from '@chakra-ui/react'
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 const DarkModeToggle: React.FC = (): JSX.Element => {
     const { toggleColorMode } = useColorMode()
@@ -8,8 +9,8 @@ const DarkModeToggle: React.FC = (): JSX.Element => {
     const handleTitleButton = () => {
         const isDark = localStorage.getItem('chakra-ui-color-mode')
         return isDark === 'dark'
-            ? setTitleButton('Noite')
-            : setTitleButton('Dia')
+            ? setTitleButton('Dia')
+            : setTitleButton('Noite')
     }
 
     const handleDarkMode = () => {
@@ -17,13 +18,9 @@ const DarkModeToggle: React.FC = (): JSX.Element => {
         handleTitleButton()
     }
 
-    useEffect(() => {
-        handleTitleButton()
-    }, [titleButton])
-
     return (
-        <Button colorScheme="green" onClick={handleDarkMode}>
-            {titleButton}
+        <Button onClick={handleDarkMode}>
+            {titleButton === 'Noite' ? <MoonIcon /> : <SunIcon />}
         </Button>
     )
 }
