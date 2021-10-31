@@ -1,12 +1,16 @@
 import React from 'react'
-import './App.css'
+import { ChakraProvider, Container } from '@chakra-ui/react'
+import Home from './pages/Home'
+import theme from './theme'
+import './theme/styles.css'
 
 const App: React.FC = (): JSX.Element => {
     return (
-        <>
-            <h1>OI</h1>
-        </>
+        <ChakraProvider theme={theme}>
+            <Container maxWidth="container.xl">
+                <Home />
+            </Container>
+        </ChakraProvider>
     )
 }
-
 export default App
