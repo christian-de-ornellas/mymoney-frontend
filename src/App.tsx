@@ -10,6 +10,7 @@ import Payments from './pages/Payments'
 import Graphics from './pages/Graphics/index'
 import Dashboard from './pages/Dashboard/index'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 const App: React.FC = (): JSX.Element => {
     return (
@@ -35,6 +36,7 @@ const App: React.FC = (): JSX.Element => {
                             <Graphics />
                         </Route>
                     </Switch>
+                    <Footer />
                 </Router>
             </Container>
         </ChakraProvider>
