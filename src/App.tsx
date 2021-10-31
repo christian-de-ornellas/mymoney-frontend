@@ -3,21 +3,20 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { ChakraProvider, Container } from '@chakra-ui/react'
 import theme from './theme'
 import './theme/styles.css'
-import Navbar from './components/Navbar'
-import DarkModeToggle from './components/DarkModeToggle'
+
 import Investments from './pages/Investments'
 import Revenues from './pages/Revenues/index'
 import Payments from './pages/Payments'
 import Graphics from './pages/Graphics/index'
 import Dashboard from './pages/Dashboard/index'
+import Header from './components/Header'
 
 const App: React.FC = (): JSX.Element => {
     return (
         <ChakraProvider theme={theme}>
-            <Container maxWidth="container.xl" padding={10}>
+            <Container maxWidth="container.xl" padding={10} height="100vh">
                 <Router>
-                    <Navbar />
-                    <DarkModeToggle />
+                    <Header />
                     <Switch>
                         <Route exact path="/">
                             <Dashboard />
